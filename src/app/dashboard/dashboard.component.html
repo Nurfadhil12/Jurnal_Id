@@ -1,0 +1,30 @@
+<div class="header-background">
+  <div style="display: flex;">
+    <h1 class="mat-h1" style="padding: 20px;">Business Overview</h1>
+    <mat-icon style="padding: 20px; font-size: 30px;color: #009bde;margin-left: 665px;">contact_support</mat-icon>
+    <mat-icon style="padding: 20px; font-size: 30px;">settings</mat-icon>
+    <mat-slide-toggle style="padding: 20px; color: #009bde;"></mat-slide-toggle>
+  </div>
+</div>
+
+<mat-grid-list cols="4" rowHeight="350px">
+  <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-card class="dashboard-card">
+      <mat-card-header>
+        <mat-card-title>
+          <div></div>
+          <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item>Expand</button>
+            <button mat-menu-item>Remove</button>
+          </mat-menu>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <div>Card Content Here</div>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,63 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="color:#fff;font-size: 40px;font-weight: bold;" >Jurnal</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item style="color:#fff" href="/dashboard">Dashboard</a>
+      <a mat-list-item style="color:#fff;" href="/reports">Reports</a>
+      <hr>
+      <a mat-list-item style="color:#fff;" href="/cash_bank">Cash & Bank</a>
+      <a mat-list-item style="color:#fff;" href="/sales">Sales</a>
+      <a mat-list-item style="color:#fff;" href="/purchases">Purchases</a>
+      <a mat-list-item style="color:#fff;" href="/expenses">Expenses</a>    
+      <hr>  
+      <a mat-list-item style="color:#fff;" href="/contacts">Contacts</a>
+      <a mat-list-item style="color:#fff;" href="/products">Products</a>
+      <a mat-list-item style="color:#fff;" href="/assets_management">Asset Management</a>
+      <a mat-list-item style="color:#fff;" href="/charts_of_accounts">Charts off Account</a>
+      <hr>      
+      <a mat-list-item style="color:#fff;" href="/other_lists">Other Lists</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style=" background-color: #009bde !important;">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>      
+      <div>
+        <div style="display: flex;">
+          <div>
+          <button mat-stroked-button class="nav-fitur">Sales</button>
+          <button mat-stroked-button class="nav-fitur">Purchase</button>
+          <button mat-stroked-button class="nav-fitur">Expense</button>
+          </div>
+          <div style="margin: 15px;
+          color: #fff;margin-left: 270px;" >
+            <h3>Nurfadhil</h3>
+          </div>
+          <div style="margin: 15px;
+          color: #fff;">
+            <mat-icon style="margin: 0px 20px;">question_answer</mat-icon>
+            <mat-icon style="margin: 0px 20px;">watch_later</mat-icon>
+            <mat-icon matBadge="15" matBadgeColor="warn" style="margin: 0px 20px;">notifications</mat-icon>
+            <span class="cdk-visually-hidden">
+              Example with a home icon with overlaid badge showing the number 15
+            </span>
+          </div>
+
+          <button mat-flat-button style="margin: 10px; background-color:#005fbf; color:#fff">Create demo company</button>
+        </div>
+      </div>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

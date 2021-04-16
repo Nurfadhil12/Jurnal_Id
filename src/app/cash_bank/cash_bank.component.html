@@ -1,0 +1,135 @@
+<div class="header-background">
+  <div style="display: flex;">
+    <div>
+      <h4 class="mat-h1" style=" padding: 10px 0px 0px 20px; margin: 0px;">Cash & Bank</h4>
+      <h1 class="mat-h1" style="padding: 0px 0px 0px 20px;">Account</h1>
+    </div>
+    <div style="padding: 20px;margin: 0px 0px 0px 800px;">
+      <button mat-raised-button>Create New Account</button>
+    </div>
+  </div>
+  <div style="display: flex;">
+    <mat-card style="width: 25%;
+    height: 150px;margin: 20px; padding: 0px; ">
+      <h3 style="background: #6ec06e;padding: 10px;">
+        Receiveables Next 30 Days (in IDR)
+      </h3>
+      <h4 style="padding: 10px;">
+        Rp.000
+      </h4>
+    </mat-card>
+    <mat-card style="width: 25%;
+    height: 150px;margin: 20px; padding: 0px; ">
+      <h3 style="background: #ea6153;padding: 10px;">
+        Receiveables Next 30 Days (in IDR)
+      </h3>
+      <h4 style="padding: 10px;">
+        Rp.000
+      </h4>
+    </mat-card>
+    <mat-card style="width: 25%;
+    height: 150px;margin: 20px; padding: 0px; ">
+      <h3 style="background: #53cff9;padding: 10px;">
+        Receiveables Next 30 Days (in IDR)
+      </h3>
+      <h4 style="padding: 10px;">
+        Rp.000
+      </h4>
+    </mat-card>
+    <mat-card style="width: 25%;
+    height: 150px;margin: 20px; padding: 0px; ">
+      <h3 style="background: #53cff9;padding: 10px;">
+        Receiveables Next 30 Days (in IDR)
+      </h3>
+      <h4 style="padding: 10px;">
+        Rp.000
+      </h4>
+    </mat-card>
+  </div>
+  <!-- <table>
+    List of Account
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Roland Mendel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>Helen Bennett</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Yoshi Tannamuri</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Giovanni Rovelli</td>
+      <td>Italy</td>
+    </tr>
+  </table> -->
+  <div style="background-color: #fff; margin: 20px;">
+    <div style="display: flex;">
+      <div style="padding: 20px;">
+        <h2>List off Account</h2>
+        <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+      </div>
+      <div style="padding: 20px;margin: 0px 0px 0px 700px;">
+        <button mat-raised-button>Basic</button>
+      </div>
+      <div style="padding: 20px;">
+        <button mat-raised-button>Basic</button>
+      </div>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
+  
+</div>
